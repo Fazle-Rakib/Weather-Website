@@ -6,8 +6,6 @@ const request = require('request')
 const geocode = require('./utils/geocode')
 const forecast= require('./utils/forecast')
 
-
-
 //Define path for express config
 const publicDirPath = path.join(__dirname,'../public')
 const viewPath = path.join(__dirname,'../templates/views')    //Renaming views -> templates & working on it
@@ -167,4 +165,3 @@ app.listen('3000',() =>{
 // app.get('/about',(req,res) => {
 //     res.send('This is about page. Working on a weather app')
 // })
-//SSH Key Added
