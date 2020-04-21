@@ -38,10 +38,11 @@ const forecast = (latitude,longitude,callback) => {
         else
         {
             callback(undefined,{
-                summary:body.daily.data[0].summary,
-                temp:body.currently.temperature,
-                precipProbability:body.currently.precipProbability,
-                location:body.timezone
+                // summary:body.daily.data[0].summary,
+                // temp:body.currently.temperature,
+                // precipProbability:body.currently.precipProbability,
+                // location:body.timezone
+                body:body
             })
         }
     })

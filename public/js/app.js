@@ -32,17 +32,19 @@ weatherForm.addEventListener('submit',(event)=>{
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
     fetch('/weather?address='+location).then((response)=>{
-        response.json().then((data)=>{
-            if(data.Error)
+        response.json().then((Data)=>{
+            if(Data.Error)
             {
                 // console.log(data.Error)
-                messageOne.textContent = data.Error
+                messageOne.textContent = Data.Error
             }
             else
             {
-                //  console.log(data)
-                messageOne.textContent = data.dataLocation
-                messageTwo.textContent = data.forecast.summary +' Temperature of (' +data.dataLocation+') is ' + data.forecast.temp+ ' degrees. The probability of rain is ' + data.forecast.precipProbability*100 +'%'
+                //console.log(Data)
+                messageOne.textContent = Data.dataLocation
+                messageTwo.textContent = Data.Total.body.daily.data[0].summary +' Temperature of (' +Data.dataLocation+') is ' + Data.Total.body.currently.temperature+ ' degrees. The probability of rain is ' + Data.Total.body.currently.precipProbability*100 +'%.'+ ' Wind Speed : ' + Data.Total.body.currently.windSpeed+
+                ' The Highest temperature : '+Data.Total.body.daily.data[0].temperatureMax + ' & the lowest temperature : '+Data.Total.body.daily.data[0].temperatureLow
+                //messageTwo.textContent = data.forecast.summary +' Temperature of (' +data.dataLocation+') is ' + data.forecast.temp+ ' degrees. The probability of rain is ' + data.forecast.precipProbability*100 +'%'
             }
             
         })
