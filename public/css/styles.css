@@ -14,7 +14,7 @@ body{
     flex-grow: 1;
 }
 .portrait{
-    max-width: 250px;
+    max-width: 350px;
 }
 input{
     border:1px solid #888888;
